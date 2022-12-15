@@ -1,0 +1,27 @@
+#------------------------------------
+# Core Resource Group
+#------------------------------------
+rg-core:
+  name: rg-core
+  location: westeurope
+  tags:
+    env: tst
+    tier: core
+#------------------------------------
+# Network Resource Group
+#------------------------------------
+rg-network:
+  name: rg-network
+  location: westeurope
+  tags:
+    env: tst
+    tier: network
+#------------------------------------
+# Synapse Resource Group
+#------------------------------------
+rg-synapse:
+  name: rg-synapse
+  location: westeurope
+  tags:
+    env: tst
+    tier: synapse

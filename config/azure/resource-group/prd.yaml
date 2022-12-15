@@ -1,0 +1,18 @@
+#------------------------------------
+# Core Resource Group
+#------------------------------------
+rg-core:
+  name: rg-core
+  location: westeurope
+  tags:
+    env: prd
+    tier: core
+#------------------------------------
+# ML Resource Group
+#------------------------------------
+rg-ml:
+  name: rg-ml
+  location: westeurope
+  tags:
+    env: prd
+    tier: ml

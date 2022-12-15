@@ -1,0 +1,18 @@
+#------------------------------------
+# Core Resource Group
+#------------------------------------
+rg-core:
+  name: rg-core
+  location: westeurope
+  tags:
+    env: dev
+    tier: core
+#------------------------------------
+# Network Resource Group
+#------------------------------------
+rg-network:
+  name: rg-network
+  location: westeurope
+  tags:
+    env: dev
+    tier: network

@@ -1,0 +1,9 @@
+#----------------------------------------------
+# Cloud Build Service Account
+#----------------------------------------------
+cloudbuild:
+  account_id: cloudbuild
+  display_name: Cloud Build Service Account
+  create_key: false
+  roles:
+    - roles/storage.objectCreator

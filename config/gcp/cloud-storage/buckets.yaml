@@ -1,0 +1,12 @@
+#----------------------------------------------
+# Example Bucket
+#----------------------------------------------
+example-bucket:
+  name: example-bucket
+  location: EU
+  labels:
+  force_destroy: false
+  uniform_bucket_level_access: true
+  storage_class: STANDARD
+  access: []
+  lifecycle_rule: []

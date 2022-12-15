@@ -1,0 +1,41 @@
+steps:
+  - id: terragrunt apply
+    name: alpine/terragrunt
+    entrypoint: sh
+    args: 
+      - -c
+      - |
+          if [ -z "${_MODULE}" ]; then 
+            for dir in cloud/gcp/${_ENV}/*/
+            do
+              echo ""
+              cd ${dir} 
+              echo "*************** TERRAGRUNT APPLY *****************"
+              echo "*************** In environment: dev **************"
+              echo "*************** In module: ${dir} ****************"
+              echo "**************************************************"
+              echo "initializing"
+              terragrunt init
+              echo "applying"
+              terragrunt apply
+              echo ""
+              cd ../../../..
+            done
+          else
+              cd cloud/gcp/${_ENV}/${_MODULE}
+              echo "$(pwd)"
+              ls
+              echo ""
+              echo "*************** TERRAGRUNT APPLY******************"
+              echo "*************** In environment: dev **************"
+              echo "*************** In module: ${_MODULE} ************"
+              echo "**************************************************"
+              echo "initializing"
+              terragrunt init
+              echo "applying"
+              terragrunt apply
+          fi
+serviceAccount: cloudbuild@enterprise-terraform-infra.iam.gserviceaccount.com
+logsBucket: gs://terraform-cloud-build-pipeline-logs
+options:
+  logging: GCS_ONLY

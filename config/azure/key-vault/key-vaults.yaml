@@ -1,0 +1,23 @@
+#------------------------------------
+# Core Key Vault
+#------------------------------------
+kv-core:
+  name: kv-core           
+  location: westeurope                      
+  resource_group_name: rg-core  
+  tenant_id: 123456789                    
+  enabled_for_disk_encryption: false    
+  sku_name: standard                    
+  soft_delete_retention_days: 7     
+  purge_protection_enabled: false       
+  public_network_access_enabled: false 
+  tags: 
+    env: dev
+    tier: core
+  access:
+    - object_id: 123456789
+      key_permissions: [Get, List, Update, Create]
+      secret_permissions: [Get, List, Set, Delete, Restore]    
+      certificate_permissions: [Get, List, Update, Create]
+                             
+                             

@@ -1,0 +1,9 @@
+#----------------------------------------------
+# Cloud Function Service Account
+#----------------------------------------------
+cloudfunction:
+  account_id: cloudfunction
+  display_name: Cloud Function Service Account
+  create_key: true
+  roles:
+    - roles/editor
